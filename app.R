@@ -34,10 +34,10 @@ ui <- fluidPage(
   sidebarPanel(
     selectInput('showGroup', 'Grupo:', levels(dataSet$Grupo)),
     uiOutput('baseFood'),
-    numericInput('calDev', 'Desvio Padrão Calorias:', 10, min = 0),
-    numericInput('choDev', 'Desvio Padrão Carboidrato:', 5, min = 0),
-    numericInput('ptnDev', 'Desvio Padrão Proteína:', 5, min = 0),
-    numericInput('lipDev', 'Desvio Padrão Lipídeos:', 5, min = 0),
+    sliderInput('calDev', 'Desvio Padrão Calorias:', min = 0, max = max(dataSet$Calorias), 10),
+    sliderInput('choDev', 'Desvio Padrão Carboidrato:', min = 0, max = max(dataSet$Carboidrato), 5),
+    sliderInput('ptnDev', 'Desvio Padrão Proteína:', min = 0, max = max(dataSet$Proteína), 5),
+    sliderInput('lipDev', 'Desvio Padrão Lipídeos:', min = 0, max = max(dataSet$Lipídeos), 5),
     checkboxGroupInput('showCols', 'Ver:', choices = names(dataSet)[c(2:16)],
                        selected = c('Calorias', 'Carboidrato', 'Proteína', 'Lipídeos'))
     ),
