@@ -5,15 +5,12 @@ dataSet <- read.csv("taco2.csv", stringsAsFactors = FALSE)
 dataSet <- dataSet[1:597,1:20]
 dataSet[dataSet == "*"] <- 0
 
-dataSet$Umidade <- NULL
 dataSet$Calorias <- as.numeric(as.character(dataSet$Energia))
-dataSet$Energia <- NULL
 dataSet$Proteína <- as.numeric(as.character(dataSet$Proteína))
 dataSet$Lipídeos <- as.numeric(as.character(dataSet$Lipídeos))
 dataSet$Carboidrato <- as.numeric(as.character(dataSet$Carboidrato))
 dataSet$Colesterol <- as.numeric(as.character(dataSet$Colesterol))
 dataSet$Fibra.Alimentar <- as.numeric(as.character(dataSet$Fibra.Alimentar))
-dataSet$Cinzas <- NULL
 dataSet$Cálcio <- as.numeric(as.character(dataSet$Cálcio))
 dataSet$Magnésio <- as.numeric(as.character(dataSet$Magnésio))
 dataSet$Manganês <- as.numeric(as.character(dataSet$Manganês))
@@ -25,6 +22,10 @@ dataSet$Cobre <- as.numeric(as.character(dataSet$Cobre))
 dataSet$Zinco <- as.numeric(as.character(dataSet$Zinco))
 dataSet$Alimento <- factor(dataSet$Alimento)
 dataSet$Grupo <- factor(dataSet$Grupo)
+
+dataSet$Umidade <- NULL
+dataSet$Energia <- NULL
+dataSet$Cinzas <- NULL
 
 dataSet <- dataSet[, c(-1)]
 dataSet <- dataSet[, c(1, 17, 4, 2:3, 5:16)]
